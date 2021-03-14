@@ -4,12 +4,13 @@ using System.Collections.Generic;
 namespace Aufgabe_4
 {
     // Author: Dirk Mueller
-    // Date: 14.03.2021
+    // Date: 15.03.2021
     //
     // Algorithm:
-    // 1. Convert all characters of the given string to lower case
-    // 2. Iterate through the string and check if each character is a vowel
-    // 3. If so, increment the counter
+    // 1. Reserve a list with 6 integer members
+    // 2. Create a random number that is larger or equal than 1 and smaller of equal than 49
+    // 3. If it does not exist yet in the list, add that number to it
+    // 4. 
     class DrawNumbers
     {
         int candidateNr;
