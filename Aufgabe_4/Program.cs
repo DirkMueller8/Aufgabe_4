@@ -8,9 +8,9 @@ namespace Aufgabe_4
     //
     // Algorithm:
     // 1. Reserve a list with 6 integer members
-    // 2. Create a random number that is larger or equal than 1 and smaller of equal than 49
+    // 2. Create a random number that is larger or equal than 1 and smaller or equal than 49
     // 3. If it does not exist yet in the list, add that number to it
-    // 4. 
+    //
     class DrawNumbers
     {
         int candidateNr;
