@@ -15,36 +15,52 @@ namespace Aufgabe_4
     {
         int candidateNr;
 
-        List<int> lottoZahlen = new List<int>(6);
+        // Create a list with a capacity of 6 for the numbers to be drawn:
+        List<int> lotteryNumbers = new List<int>(6);
         Random random = new Random();
 
         public void MakeNumbers()
         {
-            while (lottoZahlen.Count < 6)
+            // Repeat the following block until 6 numbers were added to the list:
+            while (lotteryNumbers.Count < 6)
             {
+                // Draw number n with the condition: 1 <= n <= 49:
+                // minValue: inclusive lower boundary
+                // maxValue: exclusive upper boundary
                 candidateNr = random.Next(1, 50);
-                if (!lottoZahlen.Contains(candidateNr))
+
+                // Add random number only if it was not drawn before:
+                if (!lotteryNumbers.Contains(candidateNr))
                 {
-                    lottoZahlen.Add(candidateNr);
+                    lotteryNumbers.Add(candidateNr);
                 }
             }
-            foreach (var item in lottoZahlen)
-            {
-                Console.WriteLine(item);
-            }
+            // Sort the draw:
+            lotteryNumbers.Sort();
+        }
+        public List<int> GetLottoryNumbers()
+        {
+            return lotteryNumbers;
         }
     }
     class Program
     {
-
         static void Main(string[] args)
         {
             Console.WriteLine("********************************************************************************");
             Console.WriteLine("* This program performs a drawing of the lottery 6 out of 49                   *");
             Console.WriteLine("********************************************************************************");
 
+            // Instantiate a new instance of lottery class:
             DrawNumbers draw = new DrawNumbers();
+            // Do the draw:
             draw.MakeNumbers();
+
+            foreach (int item in draw.GetLottoryNumbers())
+            {
+                Console.Write(item + " | ");
+            }
+            Console.ReadKey();
         }
     }
 }
